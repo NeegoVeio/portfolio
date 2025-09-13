@@ -2,10 +2,10 @@
   <section class="projects-container">
     <h1>Meus Projetos</h1>
     <div class="projects-grid">
-      <ProjectCard 
-        v-for="project in projects" 
-        :key="project.id" 
-        :project="project" 
+      <ProjectCard
+        v-for="project in projects"
+        :key="project.id"
+        :project="project"
       />
     </div>
   </section>
@@ -28,15 +28,15 @@ export default {
           description: "Meu site pessoal criado com Vue 3 e Vue Router.",
           image: require("@/assets/projeto1.jpg"),
           github: "https://github.com/seuusuario/portfolio",
-          demo: "https://seusite.vercel.app",
+          demo: "https://portfolio-beige-seven-21.vercel.app/",
         },
         {
           id: 2,
-          title: "Lista de Tarefas",
-          description: "App de lista de tarefas com Vue 3 + LocalStorage.",
+          title: "Mecânica",
+          description: "Site de uma mecânica local, desenvolvido com Vue.js.",
           image: require("@/assets/projeto2.jpg"),
-          github: "https://github.com/seuusuario/todo-vue",
-          demo: "",
+          github: "https://github.com/NeegoVeio/Mecanica",
+          demo: "https://mecanica-liart.vercel.app/",
         },
       ],
     };

@@ -10,28 +10,43 @@
 
       <!-- Pequena bio -->
       <p>
-        Sou apaixonado por criar interfaces modernas, responsivas e com performance usando Vue.js.
+        Sou apaixonado por criar interfaces modernas, responsivas e com
+        performance usando Vue.js.
       </p>
 
       <!-- Botões para navegar -->
       <div class="buttons">
         <router-link to="/projects" class="btn">🚀 Ver Projetos</router-link>
-        <router-link to="/contact" class="btn secondary">📬 Contato</router-link>
+        <router-link to="/contact" class="btn secondary"
+          >📬 Contato</router-link
+        >
+
+        <!-- Botão para baixar o currículo -->
+        <a href="@/assets/curriculo.pdf" download class="btn download-btn"
+          >📄 Baixar Currículo</a
+        >
       </div>
 
       <!-- Redes sociais -->
       <div class="socials">
-        <a href="https://github.com/NeegoVeio" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+        <a
+          href="https://github.com/NeegoVeio"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener noreferrer"
+        >
           <img :src="githubIcon" alt="GitHub" />
         </a>
-        <a href="https://linkedin.com/in/seulinkedin" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        <a
+          href="https://linkedin.com/in/seulinkedin"
+          target="_blank"
+          aria-label="LinkedIn"
+          rel="noopener noreferrer"
+        >
           <img :src="linkedinIcon" alt="LinkedIn" />
         </a>
       </div>
     </div>
-
-    <!-- Footer simples -->
-    
   </section>
 </template>
 
@@ -62,7 +77,7 @@ export default {
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #f0fdf4, #e0f7fa);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #333;
 }
 
@@ -137,6 +152,14 @@ p {
 
 .btn.secondary:hover {
   background-color: #2c3e50;
+}
+
+.download-btn {
+  background-color: #ff6347; /* cor para destacar o botão de download */
+}
+
+.download-btn:hover {
+  background-color: #e53e3e;
 }
 
 .socials {

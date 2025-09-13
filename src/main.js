@@ -1,7 +1,5 @@
-import { createApp } from "vue"; // Criar a instância do Vue
-import App from "./App.vue"; // Componente principal
-import router from "./router"; // Importando o router configurado
+import { createApp } from "vue";
+import App from "./App.vue"; 
+import router from "./router"; 
 
-createApp(App)
-  .use(router) // Usando o Vue Router
-  .mount("#app"); // Montando a aplicação no elemento com id 'app'
+createApp(App).use(router).mount("#app");
