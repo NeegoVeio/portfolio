@@ -4,6 +4,7 @@
       <router-link to="/">Início</router-link>
       <router-link to="/projects">Projetos</router-link>
       <router-link to="/contact">Contato</router-link>
+      <router-link to="/about">Sobre Mim</router-link>
     </div>
     <button @click="toggleTheme" class="theme-toggle">
       {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}
@@ -51,6 +52,7 @@ nav {
   padding: 15px;
   background: #333;
   color: white;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -86,11 +88,17 @@ body.dark-mode {
 }
 
 body.dark-mode nav {
-  background-color: #222;
+  background-color: #222; /* Alterando o fundo do nav para algo mais escuro */
 }
 
 body.dark-mode .theme-toggle {
   border-color: #ccc;
+  color: #eee;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #eee;
+  color: #333;
 }
 
 /* Responsividade */

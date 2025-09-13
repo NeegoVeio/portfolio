@@ -10,21 +10,14 @@
 
       <!-- Pequena bio -->
       <p>
-        Sou apaixonado por criar interfaces modernas, responsivas e com
-        performance usando Vue.js.
+        Sou apaixonado por criar interfaces modernas, responsivas e com performance usando Vue.js.
       </p>
 
       <!-- Botões para navegar -->
       <div class="buttons">
         <router-link to="/projects" class="btn">🚀 Ver Projetos</router-link>
-        <router-link to="/contact" class="btn secondary"
-          >📬 Contato</router-link
-        >
-
-        <!-- Botão para baixar o currículo -->
-        <a href="@/assets/curriculo.pdf" download class="btn download-btn"
-          >📄 Baixar Currículo</a
-        >
+        <router-link to="/contact" class="btn secondary">📬 Contato</router-link>
+        <a href="@/assets/curriculo.pdf" download class="btn download-btn">📄 Baixar Currículo</a>
       </div>
 
       <!-- Redes sociais -->
@@ -35,15 +28,17 @@
           aria-label="GitHub"
           rel="noopener noreferrer"
         >
-          <img :src="githubIcon" alt="GitHub" />
+          <!-- Ícone GitHub com FontAwesome -->
+          <i class="fab fa-github social-icon"></i>
         </a>
         <a
-          href="https://linkedin.com/in/seulinkedin"
+          href="https://www.linkedin.com/in/isaque-teodoro-793a39282/"
           target="_blank"
           aria-label="LinkedIn"
           rel="noopener noreferrer"
         >
-          <img :src="linkedinIcon" alt="LinkedIn" />
+          <!-- Ícone LinkedIn com FontAwesome -->
+          <i class="fab fa-linkedin social-icon"></i>
         </a>
       </div>
     </div>
@@ -51,17 +46,13 @@
 </template>
 
 <script>
-import profilePic from "@/assets/foto-perfil.jpg";
-import githubIcon from "@/assets/github.svg";
-import linkedinIcon from "@/assets/linkedin.svg";
+import profilePic from "@/assets/foto-perfil.jpg"; // Foto de perfil
 
 export default {
   name: "HomeView",
   data() {
     return {
       profilePic,
-      githubIcon,
-      linkedinIcon,
     };
   },
 };
@@ -76,7 +67,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #f0fdf4, #e0f7fa);
+  background: linear-gradient(135deg, #e0f7fa, #f0fdf4);
   font-family: "Inter", sans-serif;
   color: #333;
 }
@@ -97,24 +88,26 @@ export default {
 }
 
 .profile-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
+  color: #42b883;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #555;
   margin-bottom: 20px;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #555;
+  max-width: 500px;
 }
 
 .highlight {
@@ -125,7 +118,7 @@ p {
 .buttons {
   margin-top: 30px;
   display: flex;
-  gap: 16px;
+  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -155,7 +148,8 @@ p {
 }
 
 .download-btn {
-  background-color: #ff6347; /* cor para destacar o botão de download */
+  background-color: #ff6347; /* Cor de destaque para o botão de download */
+  font-size: 1.1rem;
 }
 
 .download-btn:hover {
@@ -169,14 +163,13 @@ p {
   gap: 30px;
 }
 
-.socials img {
-  width: 36px;
-  height: 36px;
+.socials i {
+  font-size: 36px;
   opacity: 0.7;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.socials img:hover {
+.socials i:hover {
   opacity: 1;
   transform: scale(1.2);
 }
@@ -205,9 +198,8 @@ p {
     gap: 20px;
   }
 
-  .socials img {
-    width: 28px;
-    height: 28px;
+  .socials i {
+    font-size: 28px;
   }
 
   h1 {
@@ -219,3 +211,6 @@ p {
   }
 }
 </style>
+
+<!-- Não se esqueça de incluir o FontAwesome CDN no seu index.html -->
+

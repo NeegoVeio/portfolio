@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"; // Importa as funç
 import HomeView from "@/views/HomeView.vue"; // Importa a view Home
 import ProjectsView from "@/views/ProjectsView.vue"; // Importa a view Projects
 import ContactView from "@/views/ContactView.vue"; // Importa a view Contact
+import AboutView from "@/views/AboutView.vue"; // Corrigido o caminho para a view About
 
 // Definindo as rotas
 const routes = [
@@ -19,6 +20,11 @@ const routes = [
     path: "/contact", // Página de Contato
     name: "Contact",
     component: ContactView,
+  },
+  {
+    path: "/about", // Página Sobre Mim
+    name: "About",
+    component: AboutView, // Componente associado à página Sobre Mim
   },
 ];
 
