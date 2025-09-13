@@ -1,14 +1,27 @@
 <template>
-  <nav>
-    <div class="nav-left">
-      <router-link to="/">Início</router-link>
-      <router-link to="/projects">Projetos</router-link>
-      <router-link to="/contact">Contato</router-link>
-      <router-link to="/about">Sobre Mim</router-link>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <router-link to="/">Isaque</router-link>
+      </div>
+
+      <!-- Botão de menu (hamburger) -->
+      <button class="hamburger" @click="menuOpen = !menuOpen">
+        <i :class="menuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+      </button>
+
+      <!-- Links -->
+      <ul :class="['nav-links', { open: menuOpen }]">
+        <li><router-link to="/projects">Projetos</router-link></li>
+        <li><router-link to="/contact">Contato</router-link></li>
+        <li><router-link to="/about">Sobre Mim</router-link></li>
+        <li>
+          <button @click="toggleTheme" class="theme-toggle">
+            {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}
+          </button>
+        </li>
+      </ul>
     </div>
-    <button @click="toggleTheme" class="theme-toggle">
-      {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}
-    </button>
   </nav>
 </template>
 
@@ -18,10 +31,10 @@ export default {
   data() {
     return {
       isDark: false,
+      menuOpen: false,
     };
   },
   created() {
-    // Verificando se o tema foi salvo no localStorage
     const stored = localStorage.getItem("theme");
     if (stored === "dark") {
       this.isDark = true;
@@ -44,26 +57,59 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
+/* Container base */
+.navbar {
   background: #333;
   color: white;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-a {
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo a {
+  color: #42b883;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.nav-left {
-  display: flex;
-  gap: 20px;
+.nav-links li a:hover {
+  color: #42b883;
 }
 
 .theme-toggle {
@@ -73,22 +119,22 @@ a {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: white;
+  background: white;
   color: #333;
 }
 
-/* DARK MODE */
+/* Dark Mode */
 body.dark-mode {
   background-color: #121212;
   color: #eee;
 }
 
-body.dark-mode nav {
-  background-color: #222; /* Alterando o fundo do nav para algo mais escuro */
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
 }
 
 body.dark-mode .theme-toggle {
@@ -101,15 +147,32 @@ body.dark-mode .theme-toggle:hover {
   color: #333;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
-  .nav-left {
+  .hamburger {
     display: block;
-    text-align: center;
   }
 
-  .theme-toggle {
-    margin-top: 10px;
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 16px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>

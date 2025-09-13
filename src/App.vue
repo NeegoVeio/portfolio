@@ -51,7 +51,7 @@ export default {
 <style>
 /* Estilo global para o aplicativo */
 #app {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 

@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <!-- Ajuste o idioma para "pt-BR" ou o idioma correto -->
+<html lang="pt-BR">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico"> <!-- Essa linha está correta se estiver usando html-webpack-plugin -->
-    <title><%= htmlWebpackPlugin.options.title %></title> <!-- O título será injetado dinamicamente -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Novo título da aba -->
+    <title>Portfólio | Isaque</title>
+
+    <!-- Novo ícone (certifique-se de ter o favicon.png na pasta public) -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Font Awesome CDN para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>Seu navegador precisa de JavaScript habilitado para o site funcionar corretamente.</strong>
     </noscript>
-    <div id="app"></div> <!-- Este é o ponto de montagem do Vue -->
-    <!-- Os arquivos compilados serão injetados automaticamente pelo Webpack -->
+    <div id="app"></div>
+    <!-- Webpack injeta os arquivos JS/CSS compilados aqui -->
   </body>
 </html>

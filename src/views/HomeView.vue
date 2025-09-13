@@ -1,26 +1,31 @@
 <template>
   <section class="home-container">
     <div class="profile">
-      <!-- Foto de perfil -->
-      <img :src="profilePic" alt="Foto de Isaque" class="profile-img" />
+      <!-- Foto de Perfil -->
+      <img :src="profilePic" alt="Foto de Perfil" class="profile-img" />
 
-      <!-- Nome e título -->
-      <h1>Olá, eu sou <span class="highlight">Isaque</span></h1>
-      <h2>Desenvolvedor Front-End</h2>
+      <!-- Título -->
+      <h1>BEM VINDO AO MEU <span class="highlight">PORTFÓLIO</span></h1>
 
-      <!-- Pequena bio -->
-      <p>
-        Sou apaixonado por criar interfaces modernas, responsivas e com performance usando Vue.js.
-      </p>
-
-      <!-- Botões para navegar -->
+      <!-- Botões principais -->
       <div class="buttons">
         <router-link to="/projects" class="btn">🚀 Ver Projetos</router-link>
-        <router-link to="/contact" class="btn secondary">📬 Contato</router-link>
-        <a href="@/assets/curriculo.pdf" download class="btn download-btn">📄 Baixar Currículo</a>
+        <router-link to="/contact" class="btn secondary"
+          >📬 Contato</router-link
+        >
+        <a
+          href="/curriculo.pdf"
+          download="Isaque-Curriculo.pdf"
+          class="btn download-btn"
+        >
+          📄 Baixar Currículo
+        </a>
+        <router-link to="/about" class="btn about-btn"
+          >🙋 Sobre Mim</router-link
+        >
       </div>
 
-      <!-- Redes sociais -->
+      <!-- Redes Sociais -->
       <div class="socials">
         <a
           href="https://github.com/NeegoVeio"
@@ -28,7 +33,6 @@
           aria-label="GitHub"
           rel="noopener noreferrer"
         >
-          <!-- Ícone GitHub com FontAwesome -->
           <i class="fab fa-github social-icon"></i>
         </a>
         <a
@@ -37,7 +41,6 @@
           aria-label="LinkedIn"
           rel="noopener noreferrer"
         >
-          <!-- Ícone LinkedIn com FontAwesome -->
           <i class="fab fa-linkedin social-icon"></i>
         </a>
       </div>
@@ -46,7 +49,7 @@
 </template>
 
 <script>
-import profilePic from "@/assets/foto-perfil.jpg"; // Foto de perfil
+import profilePic from "@/assets/foto-perfil.jpg";
 
 export default {
   name: "HomeView",
@@ -148,12 +151,20 @@ p {
 }
 
 .download-btn {
-  background-color: #ff6347; /* Cor de destaque para o botão de download */
+  background-color: #ff6347;
   font-size: 1.1rem;
 }
 
 .download-btn:hover {
   background-color: #e53e3e;
+}
+
+.about-btn {
+  background-color: #1f50ac;
+}
+
+.about-btn:hover {
+  background-color: #1f50ac;
 }
 
 .socials {
@@ -182,7 +193,7 @@ p {
   user-select: none;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 480px) {
   .profile-img {
     width: 130px;
@@ -209,8 +220,9 @@ p {
   h2 {
     font-size: 1.2rem;
   }
+
+  .info-card {
+    padding: 16px;
+  }
 }
 </style>
-
-<!-- Não se esqueça de incluir o FontAwesome CDN no seu index.html -->
-
