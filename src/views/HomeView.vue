@@ -21,7 +21,7 @@
           📄 Baixar Currículo
         </a>
         <router-link to="/about" class="btn about-btn"
-          >🙋 Sobre Mim</router-link
+          >👨🏾‍💻 Sobre Mim</router-link
         >
       </div>
 

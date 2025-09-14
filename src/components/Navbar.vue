@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="nav-container">
       <div class="logo">
         <router-link to="/">Isaque</router-link>
@@ -32,6 +32,7 @@ export default {
     return {
       isDark: false,
       menuOpen: false,
+      isScrolled: false,
     };
   },
   created() {
@@ -40,6 +41,12 @@ export default {
       this.isDark = true;
       document.body.classList.add("dark-mode");
     }
+
+    // Listener para scroll
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     toggleTheme() {
@@ -52,6 +59,9 @@ export default {
         localStorage.setItem("theme", "light");
       }
     },
+    handleScroll() {
+      this.isScrolled = window.scrollY > 20;
+    },
   },
 };
 </script>
@@ -59,12 +69,20 @@ export default {
 <style scoped>
 /* Container base */
 .navbar {
-  background: #333;
+  background: transparent;
   color: white;
   padding: 14px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Efeito vidro ao descer */
+.navbar.scrolled {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -133,8 +151,9 @@ body.dark-mode {
   color: #eee;
 }
 
-body.dark-mode .navbar {
-  background-color: #1e1e1e;
+body.dark-mode .navbar.scrolled {
+  background: rgba(18, 18, 18, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .theme-toggle {

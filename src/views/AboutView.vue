@@ -2,7 +2,10 @@
   <section class="about-container">
     <div class="about-header">
       <h1>Sobre Mim</h1>
-      <p>Sou um desenvolvedor Front-End apaixonado por criar interfaces modernas e funcionais.</p>
+      <p>
+        Desenvolvedor Front-End em desenvolvimento, estudante de Ciência da
+        Computação, apaixonado por criar interfaces modernas e funcionais.
+      </p>
     </div>
 
     <div class="about-content">
@@ -11,7 +14,14 @@
         <div class="bio-text">
           <h2>Quem sou eu?</h2>
           <p>
-            Olá, meu nome é Isaque, sou um desenvolvedor Front-End com experiência em Vue.js e outras tecnologias. Gosto de trabalhar com design responsivo e otimizar a experiência do usuário.
+            Sou estudante de Ciência da Computação com interesse em Segurança da
+            Informação e Administração de Sistemas e Redes. Tenho experiência
+            prática em desenvolvimento web (Vue, Vuetify, AdonisJS, PostgreSQL)
+            e em projetos de automação e integração de sistemas. Além disso,
+            atuo como fotógrafo voluntário em minha comunidade, unindo técnica e
+            sensibilidade para registrar momentos importantes. Busco
+            constantemente novos desafios para aplicar meus conhecimentos,
+            aprender e contribuir com soluções criativas e eficientes.
           </p>
         </div>
       </div>
@@ -22,23 +32,35 @@
           <div class="skill">
             <div class="skill-header">
               <!-- Ícone SVG do Vue.js hospedado no CDN -->
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/vue.js.svg" alt="Vue.js" class="skill-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/vue.js.svg"
+                alt="Vue.js"
+                class="skill-icon"
+              />
               <div class="skill-name">Vue.js</div>
             </div>
-            <div class="skill-bar" style="width: 90%"></div>
+            <div class="skill-bar" style="width: 68%"></div>
           </div>
           <div class="skill">
             <div class="skill-header">
               <!-- Ícone SVG do JavaScript hospedado no CDN -->
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg" alt="JavaScript" class="skill-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg"
+                alt="JavaScript"
+                class="skill-icon"
+              />
               <div class="skill-name">JavaScript</div>
             </div>
-            <div class="skill-bar" style="width: 85%"></div>
+            <div class="skill-bar" style="width: 35%"></div>
           </div>
           <div class="skill">
             <div class="skill-header">
               <!-- Ícone SVG do CSS3 hospedado no CDN -->
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/css3.svg" alt="CSS3" class="skill-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/css3.svg"
+                alt="CSS3"
+                class="skill-icon"
+              />
               <div class="skill-name">CSS3</div>
             </div>
             <div class="skill-bar" style="width: 80%"></div>
@@ -46,10 +68,14 @@
           <div class="skill">
             <div class="skill-header">
               <!-- Ícone SVG do GitHub hospedado no CDN -->
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="skill-icon" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
+                alt="GitHub"
+                class="skill-icon"
+              />
               <div class="skill-name">Git & GitHub</div>
             </div>
-            <div class="skill-bar" style="width: 75%"></div>
+            <div class="skill-bar" style="width: 100%"></div>
           </div>
         </div>
       </div>
@@ -57,8 +83,27 @@
       <div class="experience">
         <h2>Experiência</h2>
         <ul>
-          <li><strong>Desenvolvedor Front-End</strong> | Empresa XYZ | 2021 - Presente</li>
-          <li><strong>Estagiário de Desenvolvimento</strong> | Empresa ABC | 2020 - 2021</li>
+          <li>
+            <strong>Fotógrafo</strong> | Igreja Assembleia de Deus Min. Belém,
+            Campinas – SP | 2023 - Presente
+            <br />
+            Registro de eventos e cultos, edição de imagens e criação de
+            conteúdo visual para redes sociais da igreja.
+          </li>
+          <li>
+            <strong>Projetos de Desenvolvimento Web</strong> | Autônomo | 2024 -
+            Presente
+            <br />
+            Criação de aplicações web utilizando Vue.js, Vuetify, AdonisJS e
+            PostgreSQL. Experiência em design responsivo.
+          </li>
+          <li>
+            <strong>Estudante de Ciência da Computação</strong> | (EAD) | 2024 -
+            Presente
+            <br />
+            Foco em Segurança da Informação, Administração de Redes e
+            Desenvolvimento de Sistemas.
+          </li>
         </ul>
       </div>
     </div>
@@ -77,7 +122,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .about-container {

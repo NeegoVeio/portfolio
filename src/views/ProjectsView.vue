@@ -47,7 +47,7 @@ export default {
           title: "Portfólio Pessoal",
           description: "Meu site pessoal criado com Vue 3 e Vue Router.",
           image: require("@/assets/projeto1.jpg"),
-          github: "https://github.com/seuusuario/portfolio",
+          github: "https://github.com/NeegoVeio/portfolio",
           demo: "https://portfolio-beige-seven-21.vercel.app/",
         },
         {
