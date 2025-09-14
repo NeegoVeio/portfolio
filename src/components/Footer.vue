@@ -1,13 +1,27 @@
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <a href="https://github.com/NeegoVeio" target="_blank" class="github-logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+      <a
+        href="https://github.com/NeegoVeio"
+        target="_blank"
+        class="github-logo"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="GitHub"
+        />
       </a>
-      <span>© 2025 Isaque Teodoro — Desenvolvido com Vue 3  | Tusing my brain to the speed of a processor.</span>
+      <span
+        >© 2025 Isaque Teodoro — Desenvolvido com Vue 3 | Tusing my brain to the
+        speed of a processor.</span
+      >
       <nav class="footer-links">
         <a href="https://github.com/NeegoVeio" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/isaque-teodoro-793a39282/" target="_blank">LinkedIn</a>
+        <a
+          href="https://www.linkedin.com/in/isaque-teodoro-793a39282/"
+          target="_blank"
+          >LinkedIn</a
+        >
         <a href="https://instagram.com/seuusuario" target="_blank">Instagram</a>
       </nav>
     </div>
