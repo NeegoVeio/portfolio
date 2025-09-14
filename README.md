@@ -1,4 +1,4 @@
-# portifolioo
+# portifolio
 
 ## Project setup
 ```
