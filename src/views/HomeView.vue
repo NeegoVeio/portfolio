@@ -1,31 +1,31 @@
 <template>
   <section class="home-container">
     <div class="profile">
-      <!-- Foto de Perfil -->
+      
       <img :src="profilePic" alt="Foto de Perfil" class="profile-img" />
 
-      <!-- Título -->
-      <h1>BEM VINDO AO MEU <span class="highlight">PORTFÓLIO</span></h1>
 
-      <!-- Botões principais -->
+      <h1> {{ Bemvindo1 }} <span class="highlight"> {{ Bemvindo2 }} </span></h1>
+
+      
       <div class="buttons">
-        <router-link to="/projects" class="btn">🚀 Ver Projetos</router-link>
+        <router-link to="/projects" class="btn">🚀 {{VProjetos}}</router-link>
         <router-link to="/contact" class="btn secondary"
-          >📬 Contato</router-link
+          >📬 {{ Contato }}</router-link
         >
         <a
           href="/curriculo.pdf"
           download="Isaque-Curriculo.pdf"
           class="btn download-btn"
         >
-          📄 Baixar Currículo
+           {{ curriculo }}
         </a>
         <router-link to="/about" class="btn about-btn"
-          >👨🏾‍💻 Sobre Mim</router-link
+          >👨🏾‍💻 {{ Sobre }}</router-link
         >
       </div>
 
-      <!-- Redes Sociais -->
+      
       <div class="socials">
         <a
           href="https://github.com/NeegoVeio"
@@ -50,8 +50,27 @@
 
 <script>
 import profilePic from "@/assets/foto-perfil.jpg";
+import { useLocale } from "vuetify";
 
 export default {
+ setup() {
+    const { t } = useLocale();
+    const Contato = t("$vuetify.Contato");
+    const Bemvindo1 = t("$vuetify.Bemvindo1");
+    const Bemvindo2 = t("$vuetify.Bemvindo2");
+    const VProjetos = t("$vuetify.VProjetos");
+    const curriculo = t("$vuetify.curriculo");
+    const Sobre = t("$vuetify.Sobre");
+    return {
+      Contato,
+      Bemvindo1,
+      Bemvindo2,
+      VProjetos,
+      curriculo,
+      Sobre,
+    };
+  },
+
   name: "HomeView",
   data() {
     return {

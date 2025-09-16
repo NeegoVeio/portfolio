@@ -1,10 +1,10 @@
 <template>
   <section class="contact-container">
-    <h1>Entre em Contato</h1>
+    <h1>{{ ContactTitle }}</h1>
 
     <form @submit.prevent="handleSubmit" class="contact-form" ref="contactForm">
       <div class="form-group">
-        <label for="name">Nome</label>
+        <label for="name">{{ nome }}</label>
         <input
           type="text"
           id="name"
@@ -16,7 +16,7 @@
       </div>
 
       <div class="form-group">
-        <label for="email">E-mail</label>
+        <label for="email">{{ email }}</label>
         <input
           type="email"
           id="email"
@@ -25,43 +25,72 @@
           :class="{ 'is-invalid': errors.email }"
         />
         <span v-if="errors.email" class="error-message">{{
-          errors.email
-        }}</span>
+          errors.email }}</span>
       </div>
 
       <div class="form-group">
-        <label for="message">Mensagem</label>
+        <label for="message">{{ assunto }}</label>
         <textarea
           id="message"
           v-model="form.message"
           required
           :class="{ 'is-invalid': errors.message }"
         ></textarea>
-        <span v-if="errors.message" class="error-message">{{
-          errors.message
-        }}</span>
+        <span v-if="errors.message" class="error-message">{{errors.message }}</span>
       </div>
 
       <div class="form-group">
         <button type="submit" class="btn" :disabled="isSending">
-          {{ isSending ? "Enviando..." : "Enviar" }}
+          {{ isSending ? enviando : `${enviar}` }}
         </button>
       </div>
     </form>
 
     <p v-if="submitted" class="success-message">
-      Mensagem enviada com sucesso!
+      {{ mensagemSucesso }}
     </p>
     <p v-if="formError" class="error-message">
-      Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.
+      {{ mensagemErro }}
     </p>
   </section>
 </template>
 
 <script>
-import emailjs from "emailjs-com"; // Importando o EmailJS
+import emailjs from "emailjs-com";
+import { useLocale } from "vuetify";
 
 export default {
+  setup() {
+    const { t } = useLocale();
+    const ContactTitle = t("$vuetify.ContactTitle");
+    const mensagemSucesso = t("$vuetify.mensagemSucesso");
+    const mensagemErro = t("$vuetify.mensagemErro");
+    const enviar = t("$vuetify.enviar");
+    const enviando = t("$vuetify.enviando");
+    const nome = t("$vuetify.nome");
+    const email = t("$vuetify.email");
+    const assunto = t("$vuetify.assunto");
+    const invalidadenome = t("$vuetify.invalidadenome");
+    const invalidaemail = t("$vuetify.invalidaemail");
+    const invalidadeassunto = t("$vuetify.invalidadeassunto");
+    const faltaemail = t("$vuetify.faltaemail");
+
+    return {
+      ContactTitle,
+      mensagemSucesso,
+      mensagemErro,
+      enviar,
+      enviando,
+      nome,
+      email,
+      assunto,
+      invalidadenome,
+      invalidaemail,
+      invalidadeassunto,
+      faltaemail,
+    };
+  },
+
   name: "ContactView",
   data() {
     return {
@@ -81,52 +110,53 @@ export default {
     };
   },
   mounted() {
-    // Inicializando o EmailJS com seu User ID
-    emailjs.init("7DhxmoxDyKGbeKDrN"); // Substitua "YOUR_USER_ID" pelo seu User ID do EmailJS
+    
+    emailjs.init("7DhxmoxDyKGbeKDrN");
   },
   methods: {
-    // Função para validar o formulário
+    
     validateForm() {
       this.errors = { name: "", email: "", message: "" };
       let isValid = true;
 
-      // Validação para o campo Nome
+      
       if (!this.form.name) {
-        this.errors.name = "Por favor, insira seu nome.";
+        this.errors.name = "{{ invalidadenome }}";
+        isValid = false;
         isValid = false;
       }
 
-      // Validação para o campo E-mail
+      
       if (!this.form.email) {
-        this.errors.email = "Por favor, insira um e-mail.";
+        this.errors.email = "{{ faltaemail }}";
         isValid = false;
       } else if (!this.isValidEmail(this.form.email)) {
-        this.errors.email = "Por favor, insira um e-mail válido.";
+        this.errors.email = "{{ invalidaemail }}";
         isValid = false;
       }
 
-      // Validação para o campo Mensagem
+      
       if (!this.form.message) {
-        this.errors.message = "Por favor, escreva uma mensagem.";
+        this.errors.message = "{{ invalidadeassunto }}";
         isValid = false;
       }
 
       return isValid;
     },
 
-    // Função para verificar se o e-mail é válido
+    
     isValidEmail(email) {
       const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       return re.test(email);
     },
 
-    // Função para enviar o formulário
+
     handleSubmit() {
       if (this.validateForm()) {
         this.isSending = true;
         this.formError = false;
 
-        // Enviar o formulário via EmailJS
+
         emailjs
           .sendForm(
             "service_x03yobk",
@@ -135,7 +165,7 @@ export default {
           )
           .then(
             (response) => {
-              console.log("Mensagem enviada com sucesso", response);
+              console.log("{{mensagemSucesso}}", response);
               this.submitted = true;
               this.isSending = false;
               this.form.name = "";
@@ -143,7 +173,7 @@ export default {
               this.form.message = "";
             },
             (error) => {
-              console.error("Erro ao enviar a mensagem", error);
+              console.error("{{mensagemErro}}", error);
               this.formError = true;
               this.isSending = false;
             }
