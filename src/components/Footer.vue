@@ -12,8 +12,7 @@
         />
       </a>
       <span
-        >© 2025 Isaque Teodoro — Desenvolvido com Vue 3 | Tusing my brain to the
-        speed of a processor.</span
+        >{{Footer}}</span
       >
       <nav class="footer-links">
         <a href="https://github.com/NeegoVeio" target="_blank">GitHub</a>
@@ -29,7 +28,15 @@
 </template>
 
 <script>
+import { useLocale } from "vuetify";
+
 export default {
+ setup() {
+    const { t } = useLocale();
+    const Footer = t("$vuetify.Footer");
+    return { Footer };
+ },
+
   name: "AppFooter",
 };
 </script>

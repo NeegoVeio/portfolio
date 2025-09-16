@@ -5,13 +5,21 @@
     <p>{{ project.description }}</p>
     <div class="buttons">
       <a :href="project.github" target="_blank" class="btn">GitHub</a>
-      <a v-if="project.demo" :href="project.demo" target="_blank" class="btn btn-demo">Ver Online</a>
+      <a
+        v-if="project.demo"
+        :href="project.demo"
+        target="_blank"
+        class="btn btn-demo"
+        >Ver Online</a
+      >
     </div>
   </div>
 </template>
 
 <script>
 export default {
+
+
   name: "ProjectCard",
   props: {
     project: {

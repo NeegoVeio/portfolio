@@ -1,9 +1,8 @@
 <template>
   <section class="projects-container">
-    <h1>💻 Meus Projetos</h1>
+    <h1>💻 {{ MProjetos }}</h1>
     <p class="subtitle">
-      Veja abaixo alguns dos projetos que desenvolvi com foco em performance e
-      usabilidade.
+      {{ DProjetos }}
     </p>
 
     <div class="projects-grid">
@@ -19,15 +18,16 @@
               rel="noopener noreferrer"
               class="btn-icon"
             >
-              <i class="fab fa-github"></i> Código
+              <i class="fab fa-github"></i> {{ codigo }}
             </a>
             <a
+              v-if="project.demo"
               :href="project.demo"
               target="_blank"
               rel="noopener noreferrer"
               class="btn-icon secondary"
             >
-              <i class="fas fa-external-link-alt"></i> Ver Projeto
+              <i class="fas fa-external-link-alt"></i> {{ VProjetos }}
             </a>
           </div>
         </div>
@@ -36,40 +36,42 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "ProjectsView",
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: "Portfólio Pessoal",
-          description: "Meu site pessoal criado com Vue 3 e Vue Router.",
-          image: require("@/assets/projeto1.jpg"),
-          github: "https://github.com/NeegoVeio/portfolio",
-          demo: "https://portfolio-isaque.vercel.app/",
-        },
-        {
-          id: 2,
-          title: "Mecânica",
-          description: "Site de uma mecânica local, desenvolvido com Vue.js.",
-          image: require("@/assets/projeto2.jpg"),
-          github: "https://github.com/NeegoVeio/Mecanica",
-          demo: "https://mecanica-liart.vercel.app/",
-        },
-        {
-          id: 3,
-          title: "Price Monitor Bot",
-          description:
-            "Bot que monitora preços online e envia alertas no Discord ou Telegram quando o valor cai. Ideal para caçadores de promoções.",
-          image: require("@/assets/projeto3.jpg"),
-          github: "https://github.com/NeegoVeio/price-monitor-bot",
-        },
-      ],
-    };
+<script setup>
+import { useLocale } from "vuetify";
+
+const { t } = useLocale();
+
+const MProjetos = t("$vuetify.MProjetos");
+const DProjetos = t("$vuetify.DProjetos");
+const codigo = t("$vuetify.codigo");
+const VProjetos = t("$vuetify.VProjetos");
+
+const projects = [
+  {
+    id: 1,
+    title: t("$vuetify.title1"),
+    description: t("$vuetify.dest1"),
+    image: require("@/assets/projeto1.jpg"),
+    github: "https://github.com/NeegoVeio/portfolio",
+    demo: "https://portfolio-isaque.vercel.app/",
   },
-};
+  {
+    id: 2,
+    title: t("$vuetify.title2"),
+    description: t("$vuetify.dest2"),
+    image: require("@/assets/projeto2.jpg"),
+    github: "https://github.com/NeegoVeio/Mecanica",
+    demo: "https://mecanica-liart.vercel.app/",
+  },
+  {
+    id: 3,
+    title: t("$vuetify.title3"),
+    description: t("$vuetify.dest3"),
+    image: require("@/assets/projeto3.jpg"),
+    github: "https://github.com/NeegoVeio/price-monitor-bot",
+    demo: "", // ou pode remover esse campo se não houver demo
+  },
+];
 </script>
 
 <style scoped>

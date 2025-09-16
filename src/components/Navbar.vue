@@ -5,16 +5,18 @@
         <router-link to="/">Isaque</router-link>
       </div>
 
-      <!-- Botão de menu (hamburger) -->
       <button class="hamburger" @click="menuOpen = !menuOpen">
         <i :class="menuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
       </button>
 
-      <!-- Links -->
       <ul :class="['nav-links', { open: menuOpen }]">
-        <li><router-link to="/projects">Projetos</router-link></li>
-        <li><router-link to="/contact">Contato</router-link></li>
-        <li><router-link to="/about">Sobre Mim</router-link></li>
+        <li>
+          <router-link to="/projects">{{Projetos}}</router-link>
+        </li>
+        <li>
+          <router-link to="/contact">{{Contato}}</router-link>
+        </li>
+        <li><router-link to="/about">{{Sobre}}</router-link></li>
         <li>
           <button @click="toggleTheme" class="theme-toggle">
             {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}
@@ -26,8 +28,19 @@
 </template>
 
 <script>
+import { useLocale } from "vuetify";
+
 export default {
   name: "AppNavbar",
+  setup() {
+    const { t } = useLocale();
+
+    const Contato = t("$vuetify.Contato");
+    const Projetos = t("$vuetify.Projetos");
+    const Sobre = t("$vuetify.Sobre");
+
+    return { Projetos, Contato, Sobre };
+  },
   data() {
     return {
       isDark: false,
@@ -42,7 +55,6 @@ export default {
       document.body.classList.add("dark-mode");
     }
 
-    // Listener para scroll
     window.addEventListener("scroll", this.handleScroll);
   },
   beforeUnmount() {
@@ -67,7 +79,6 @@ export default {
 </script>
 
 <style scoped>
-/* Container base */
 .navbar {
   background: transparent;
   color: white;
@@ -78,7 +89,6 @@ export default {
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Efeito vidro ao descer */
 .navbar.scrolled {
   background: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(8px);
@@ -93,7 +103,6 @@ export default {
   justify-content: space-between;
 }
 
-/* Logo */
 .logo a {
   color: #42b883;
   font-size: 1.5rem;
@@ -101,7 +110,6 @@ export default {
   text-decoration: none;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   background: none;
@@ -145,7 +153,6 @@ export default {
   color: #333;
 }
 
-/* Dark Mode */
 body.dark-mode {
   background-color: #121212;
   color: #eee;

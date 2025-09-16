@@ -11,6 +11,10 @@
       "@/*": ["src/*"]
     }
   },
+  "vueCompilerOptions": {
+    "target": 3
+    // You can also add "globalTypesPath" here if needed
+  },
   "lib": [
     "esnext",
     "dom",

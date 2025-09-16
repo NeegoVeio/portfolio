@@ -1,10 +1,9 @@
 <template>
   <section class="about-container">
     <div class="about-header">
-      <h1>Sobre Mim</h1>
+      <h1>{{ Sobre }}</h1>
       <p>
-        Desenvolvedor Front-End em desenvolvimento, estudante de Ciência da
-        Computação, apaixonado por criar interfaces modernas e funcionais.
+        {{ H1 }}
       </p>
     </div>
 
@@ -12,26 +11,18 @@
       <div class="bio">
         <img :src="profilePic" alt="Foto de perfil" class="profile-img" />
         <div class="bio-text">
-          <h2>Quem sou eu?</h2>
+          <h2>Isaque Teodoro</h2>
           <p>
-            Sou estudante de Ciência da Computação com interesse em Segurança da
-            Informação e Administração de Sistemas e Redes. Tenho experiência
-            prática em desenvolvimento web (Vue, Vuetify, AdonisJS, PostgreSQL)
-            e em projetos de automação e integração de sistemas. Além disso,
-            atuo como fotógrafo voluntário em minha comunidade, unindo técnica e
-            sensibilidade para registrar momentos importantes. Busco
-            constantemente novos desafios para aplicar meus conhecimentos,
-            aprender e contribuir com soluções criativas e eficientes.
+            {{ H2 }}
           </p>
         </div>
       </div>
 
       <div class="skills">
-        <h2>Minhas Habilidades</h2>
+        <h2>{{ Habilidades }}</h2>
         <div class="skills-list">
           <div class="skill">
             <div class="skill-header">
-              <!-- Ícone SVG do Vue.js hospedado no CDN -->
               <img
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/vue.js.svg"
                 alt="Vue.js"
@@ -81,28 +72,22 @@
       </div>
 
       <div class="experience">
-        <h2>Experiência</h2>
+        <h2>{{ Experiencia }}</h2>
         <ul>
           <li>
-            <strong>Fotógrafo</strong> | Igreja Assembleia de Deus Min. Belém,
-            Campinas – SP | 2023 - Presente
+            <strong>{{ HFotografo }}</strong> {{ EFotografo }}
             <br />
-            Registro de eventos e cultos, edição de imagens e criação de
-            conteúdo visual para redes sociais da igreja.
+            {{ HEFotografo }}
           </li>
           <li>
-            <strong>Projetos de Desenvolvimento Web</strong> | Autônomo | 2024 -
-            Presente
+            <strong>{{ HProjetos }}</strong> {{ EProjetos }}
             <br />
-            Criação de aplicações web utilizando Vue.js, Vuetify, AdonisJS e
-            PostgreSQL. Experiência em design responsivo.
+            {{ HEProjetos }}
           </li>
           <li>
-            <strong>Estudante de Ciência da Computação</strong> | (EAD) | 2024 -
-            Presente
+            <strong>{{ HEstudante }}</strong> {{ EEstudante }}
             <br />
-            Foco em Segurança da Informação, Administração de Redes e
-            Desenvolvimento de Sistemas.
+            {{ HEEstudante }}
           </li>
         </ul>
       </div>
@@ -111,9 +96,44 @@
 </template>
 
 <script>
-import profilePic from "@/assets/foto-perfil.jpg"; // Certifique-se de que a imagem esteja no caminho correto
+import profilePic from "@/assets/foto-perfil.jpg";
+import { useLocale } from "vuetify";
 
 export default {
+  setup() {
+    const { t } = useLocale();
+    const Sobre = t("$vuetify.Sobre");
+    const Habilidades = t("$vuetify.Habilidades");
+    const Experiencia = t("$vuetify.Experiencia");
+    const HFotografo = t("$vuetify.HFotografo");
+    const HProjetos = t("$vuetify.HProjetos");
+    const HEstudante = t("$vuetify.HEstudante");
+    const H1 = t("$vuetify.H1");
+    const H2 = t("$vuetify.H2");
+    const EFotografo = t("$vuetify.EFotografo");
+    const EProjetos = t("$vuetify.EProjetos");
+    const EEstudante = t("$vuetify.EEstudante");
+    const HEFotografo = t("$vuetify.HEFotografo");
+    const HEProjetos = t("$vuetify.HEProjetos");
+    const HEEstudante = t("$vuetify.HEEstudante");
+
+    return {
+      Sobre,
+      Habilidades,
+      Experiencia,
+      HFotografo,
+      HProjetos,
+      HEstudante,
+      H1,
+      H2,
+      EFotografo,
+      EProjetos,
+      EEstudante,
+      HEFotografo,
+      HEProjetos,
+      HEEstudante, 
+    };
+  },
   name: "AboutView",
   data() {
     return {
