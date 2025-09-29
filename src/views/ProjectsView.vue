@@ -76,7 +76,7 @@ const projects = [
     title: t("$vuetify.title4"),
     description: t("$vuetify.dest4"),
     image: require("@/assets/projeto4.jpg"),
-    github: "https://github.com/NeegoVeio/SITE_CONSULTORIA_DEV",
+    github: null,
     demo: "https://site-consultoria-jp.vercel.app/",
   },
 ];
