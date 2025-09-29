@@ -11,9 +11,7 @@
           alt="GitHub"
         />
       </a>
-      <span
-        >{{Footer}}</span
-      >
+      <span>{{ Footer }}</span>
       <nav class="footer-links">
         <a href="https://github.com/NeegoVeio" target="_blank">GitHub</a>
         <a
@@ -31,11 +29,11 @@
 import { useLocale } from "vuetify";
 
 export default {
- setup() {
+  setup() {
     const { t } = useLocale();
     const Footer = t("$vuetify.Footer");
     return { Footer };
- },
+  },
 
   name: "AppFooter",
 };

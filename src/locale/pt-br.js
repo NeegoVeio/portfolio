@@ -42,12 +42,15 @@ export default {
   title2: "Mecânica",
   dest2: "Site de uma mecânica local, desenvolvido com Vue.js.",
   title3: "Bot Monitor de Preços",
-  dest3: "Bot que monitora preços online e envia alertas no Discord ou Telegram quando o valor cai. Ideal para caçadores de promoções.",
+  dest3:
+    "Bot que monitora preços online e envia alertas no Discord ou Telegram quando o valor cai. Ideal para caçadores de promoções.",
+  title4: "SITE DE CONSULTORIA",
+  dest4:"DESENVOLVIDO PARA PESSOAS REALIZAREM ORÇAMENTO DE CONSULTORIAS DE PERSONAL TRAINER",
   codigo: "Código",
   MProjetos: "Meus Projetos",
-  DProjetos: "Veja abaixo alguns dos projetos que desenvolvi com foco em performance e usabilidade.",
+  DProjetos:
+    "Veja abaixo alguns dos projetos que desenvolvi com foco em performance e usabilidade.",
   claro: "Claro",
   escuro: "Escuro",
   sistema: "Sistema",
-
 };

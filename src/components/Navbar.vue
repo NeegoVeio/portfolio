@@ -11,12 +11,14 @@
 
       <ul :class="['nav-links', { open: menuOpen }]">
         <li>
-          <router-link to="/projects">{{Projetos}}</router-link>
+          <router-link to="/projects">{{ Projetos }}</router-link>
         </li>
         <li>
-          <router-link to="/contact">{{Contato}}</router-link>
+          <router-link to="/contact">{{ Contato }}</router-link>
         </li>
-        <li><router-link to="/about">{{Sobre}}</router-link></li>
+        <li>
+          <router-link to="/about">{{ Sobre }}</router-link>
+        </li>
         <li>
           <button @click="toggleTheme" class="theme-toggle">
             {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}

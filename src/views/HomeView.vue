@@ -1,15 +1,14 @@
 <template>
   <section class="home-container">
     <div class="profile">
-      
       <img :src="profilePic" alt="Foto de Perfil" class="profile-img" />
 
+      <h1>
+        {{ Bemvindo1 }} <span class="highlight"> {{ Bemvindo2 }} </span>
+      </h1>
 
-      <h1> {{ Bemvindo1 }} <span class="highlight"> {{ Bemvindo2 }} </span></h1>
-
-      
       <div class="buttons">
-        <router-link to="/projects" class="btn">🚀 {{VProjetos}}</router-link>
+        <router-link to="/projects" class="btn">🚀 {{ VProjetos }}</router-link>
         <router-link to="/contact" class="btn secondary"
           >📬 {{ Contato }}</router-link
         >
@@ -18,14 +17,13 @@
           download="Isaque-Curriculo.pdf"
           class="btn download-btn"
         >
-           {{ curriculo }}
+          {{ curriculo }}
         </a>
         <router-link to="/about" class="btn about-btn"
           >👨🏾‍💻 {{ Sobre }}</router-link
         >
       </div>
 
-      
       <div class="socials">
         <a
           href="https://github.com/NeegoVeio"
@@ -53,7 +51,7 @@ import profilePic from "@/assets/foto-perfil.jpg";
 import { useLocale } from "vuetify";
 
 export default {
- setup() {
+  setup() {
     const { t } = useLocale();
     const Contato = t("$vuetify.Contato");
     const Bemvindo1 = t("$vuetify.Bemvindo1");

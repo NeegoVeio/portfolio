@@ -69,7 +69,15 @@ const projects = [
     description: t("$vuetify.dest3"),
     image: require("@/assets/projeto3.jpg"),
     github: "https://github.com/NeegoVeio/price-monitor-bot",
-    demo: "", // ou pode remover esse campo se não houver demo
+    demo: null
+  },
+  {
+    id: 4,
+    title: t("$vuetify.title4"),
+    description: t("$vuetify.dest4"),
+    image: require("@/assets/projeto4.jpg"),
+    github: "https://github.com/NeegoVeio/SITE_CONSULTORIA_DEV",
+    demo: "https://site-consultoria-jp.vercel.app/",
   },
 ];
 </script>

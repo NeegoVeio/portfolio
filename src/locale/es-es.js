@@ -11,12 +11,16 @@ export default {
   HEstudante: "Estudiante de Ciencias de la Computación",
   H1: "Aspirante a Desarrollador Front-End, estudiante de Ciencias de la Computación, apasionado por crear interfaces modernas y funcionales.",
   H2: "Soy estudiante de Ciencias de la Computación con interés en Seguridad de la Información y Administración de Sistemas y Redes. Tengo experiencia práctica en desarrollo web (Vue, Vuetify, AdonisJS, PostgreSQL) y en proyectos de automatización e integración de sistemas. Además, trabajo como fotógrafo voluntario en mi comunidad, combinando técnica y sensibilidad para capturar momentos importantes. Busco constantemente nuevos desafíos para aplicar mis conocimientos, aprender y contribuir con soluciones creativas y eficientes.",
-  EFotografo: " | Iglesia Asamblea de Dios, Belém, Campinas – SP | 2023 - Presente",
-  HEFotografo: "Registro de eventos y cultos, edición de imágenes y creación de contenido visual para redes sociales de la iglesia.",
+  EFotografo:
+    " | Iglesia Asamblea de Dios, Belém, Campinas – SP | 2023 - Presente",
+  HEFotografo:
+    "Registro de eventos y cultos, edición de imágenes y creación de contenido visual para redes sociales de la iglesia.",
   EProjetos: "| Autónomo | 2024 - Presente",
-  HEProjetos: "Creación de aplicaciones web utilizando Vue.js, Vuetify, AdonisJS y PostgreSQL. Experiencia en diseño responsivo.",
-  EEstudante: "| FSFA - (EAD) | 2024 - Presente", 
-  HEEstudante: "Enfoque en Seguridad de la Información, Administración de Redes y Desarrollo de Sistemas.",
+  HEProjetos:
+    "Creación de aplicaciones web utilizando Vue.js, Vuetify, AdonisJS y PostgreSQL. Experiencia en diseño responsivo.",
+  EEstudante: "| FSFA - (EAD) | 2024 - Presente",
+  HEEstudante:
+    "Enfoque en Seguridad de la Información, Administración de Redes y Desarrollo de Sistemas.",
   ContactTitle: "Ponte en contacto",
   mensagemSucesso: "¡Mensaje enviado con éxito!",
   mensagemErro: "Error al enviar el mensaje. Inténtalo de nuevo más tarde.",
@@ -35,16 +39,17 @@ export default {
   curriculo: "📄 Descargar Currículum",
   title1: "Portafolio Personal",
   dest1: "Mi sitio web personal creado con Vue 3 y Vue Router.",
-  title2: "Taller de Reparación de Autos", 
-  dest2: "Sitio web para un taller de reparación de autos local, desarrollado con Vue.js.",
+  title2: "Taller de Reparación de Autos",
+  dest2:
+    "Sitio web para un taller de reparación de autos local, desarrollado con Vue.js.",
   title3: "Bot de Monitoreo de Precios",
-  dest3: "Un bot que monitorea precios en línea y envía alertas en Discord o Telegram cuando el precio baja. Ideal para cazadores de ofertas.", 
+  dest3:
+    "Un bot que monitorea precios en línea y envía alertas en Discord o Telegram cuando el precio baja. Ideal para cazadores de ofertas.",
   codigo: "Código",
   MProjetos: "Mis Proyectos",
-  DProjetos: "A continuación, algunos de los proyectos que he desarrollado con un enfoque en rendimiento y usabilidad.",
+  DProjetos:
+    "A continuación, algunos de los proyectos que he desarrollado con un enfoque en rendimiento y usabilidad.",
   claro: "Claro",
   escuro: "Oscuro",
   sistema: "Sistema",
-
-
 };
