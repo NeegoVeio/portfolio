@@ -45,7 +45,8 @@ export default {
   dest3:
     "Bot que monitora preços online e envia alertas no Discord ou Telegram quando o valor cai. Ideal para caçadores de promoções.",
   title4: "SITE DE CONSULTORIA",
-  dest4:"DESENVOLVIDO PARA PESSOAS REALIZAREM ORÇAMENTO DE CONSULTORIAS DE PERSONAL TRAINER",
+  dest4:
+    "DESENVOLVIDO PARA PESSOAS REALIZAREM ORÇAMENTO DE CONSULTORIAS DE PERSONAL TRAINER",
   codigo: "Código",
   MProjetos: "Meus Projetos",
   DProjetos:

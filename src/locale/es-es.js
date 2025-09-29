@@ -45,6 +45,8 @@ export default {
   title3: "Bot de Monitoreo de Precios",
   dest3:
     "Un bot que monitorea precios en línea y envía alertas en Discord o Telegram cuando el precio baja. Ideal para cazadores de ofertas.",
+  title4: "SITIO DE CONSULTORÍA",
+  dest: "DESARROLLADO PARA QUE LAS PERSONAS REALICEN UNA COTIZACIÓN PARA CONSULTORÍA DE ENTRENADOR PERSONAL",
   codigo: "Código",
   MProjetos: "Mis Proyectos",
   DProjetos:
