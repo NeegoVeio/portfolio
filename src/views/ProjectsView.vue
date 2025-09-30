@@ -79,6 +79,14 @@ const projects = [
     github: null,
     demo: "https://site-consultoria-jp.vercel.app/",
   },
+  {
+    id: 5,
+    title: t("$vuetify.title5"),
+    description: t("$vuetify.dest5"),
+    image: require("@/assets/projeto5.jpg"),
+    github: null,
+    demo: null,
+  },
 ];
 </script>
 

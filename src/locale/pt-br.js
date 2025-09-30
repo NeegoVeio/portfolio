@@ -47,6 +47,8 @@ export default {
   title4: "SITE DE CONSULTORIA",
   dest4:
     "DESENVOLVIDO PARA PESSOAS REALIZAREM ORÇAMENTO DE CONSULTORIAS DE PERSONAL TRAINER",
+    title5: "CURRÍCULO INTELIGENTE",
+    dest5: "Meu currículo inteligente atualiza conforme atualizações feitas no GitHub",
   codigo: "Código",
   MProjetos: "Meus Projetos",
   DProjetos:
