@@ -46,6 +46,8 @@ export default {
     "A bot that monitors online prices and sends alerts on Discord or Telegram when the price drops. Ideal for deal hunters.",
   title4: "CONSULTING SITE",
   dest4: "DEVELOPED FOR PEOPLE TO MAKE A QUOTE FOR PERSONAL TRAINER CONSULTING",
+  title5: "SMART CV",
+  dest5: "My smart resume updates as updates are made on GitHub",
   codigo: "Code",
   MProjetos: "My Projects",
   DProjetos:

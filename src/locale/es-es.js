@@ -46,7 +46,10 @@ export default {
   dest3:
     "Un bot que monitorea precios en línea y envía alertas en Discord o Telegram cuando el precio baja. Ideal para cazadores de ofertas.",
   title4: "SITIO DE CONSULTORÍA",
-  dest: "DESARROLLADO PARA QUE LAS PERSONAS REALICEN UNA COTIZACIÓN PARA CONSULTORÍA DE ENTRENADOR PERSONAL",
+  dest4:
+    "DESARROLLADO PARA QUE LAS PERSONAS REALICEN UNA COTIZACIÓN PARA CONSULTORÍA DE ENTRENADOR PERSONAL",
+  title5: "CV INTELIGENTE",
+  dest5: "Mi currículum inteligente se actualiza a medida que se realizan actualizaciones en GitHub",
   codigo: "Código",
   MProjetos: "Mis Proyectos",
   DProjetos:
