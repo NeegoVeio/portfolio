@@ -69,7 +69,7 @@ const projects = [
     description: t("$vuetify.dest3"),
     image: require("@/assets/projeto3.jpg"),
     github: "https://github.com/NeegoVeio/price-monitor-bot",
-    demo: null
+    demo: null,
   },
   {
     id: 4,
@@ -84,8 +84,8 @@ const projects = [
     title: t("$vuetify.title5"),
     description: t("$vuetify.dest5"),
     image: require("@/assets/projeto5.jpg"),
-    github: null,
-    demo: null,
+    github: "https://github.com/NeegoVeio/curriculo-inteligente",
+    demo: "https://curriculo-isaque.vercel.app/",
   },
 ];
 </script>
