@@ -131,7 +131,7 @@ export default {
       EEstudante,
       HEFotografo,
       HEProjetos,
-      HEEstudante, 
+      HEEstudante,
     };
   },
   name: "AboutView",

@@ -25,7 +25,8 @@
           :class="{ 'is-invalid': errors.email }"
         />
         <span v-if="errors.email" class="error-message">{{
-          errors.email }}</span>
+          errors.email
+        }}</span>
       </div>
 
       <div class="form-group">
@@ -36,7 +37,9 @@
           required
           :class="{ 'is-invalid': errors.message }"
         ></textarea>
-        <span v-if="errors.message" class="error-message">{{errors.message }}</span>
+        <span v-if="errors.message" class="error-message">{{
+          errors.message
+        }}</span>
       </div>
 
       <div class="form-group">
@@ -110,23 +113,19 @@ export default {
     };
   },
   mounted() {
-    
     emailjs.init("7DhxmoxDyKGbeKDrN");
   },
   methods: {
-    
     validateForm() {
       this.errors = { name: "", email: "", message: "" };
       let isValid = true;
 
-      
       if (!this.form.name) {
         this.errors.name = "{{ invalidadenome }}";
         isValid = false;
         isValid = false;
       }
 
-      
       if (!this.form.email) {
         this.errors.email = "{{ faltaemail }}";
         isValid = false;
@@ -135,7 +134,6 @@ export default {
         isValid = false;
       }
 
-      
       if (!this.form.message) {
         this.errors.message = "{{ invalidadeassunto }}";
         isValid = false;
@@ -144,18 +142,15 @@ export default {
       return isValid;
     },
 
-    
     isValidEmail(email) {
       const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       return re.test(email);
     },
 
-
     handleSubmit() {
       if (this.validateForm()) {
         this.isSending = true;
         this.formError = false;
-
 
         emailjs
           .sendForm(

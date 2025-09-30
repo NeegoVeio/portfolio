@@ -12,7 +12,7 @@
     <ul>
       <li v-for="note in notes" :key="note.id">
         {{ note.title }}
-        <button @click="deleteNote(note.id)" style="margin-left: 10px;">
+        <button @click="deleteNote(note.id)" style="margin-left: 10px">
           🗑️
         </button>
       </li>

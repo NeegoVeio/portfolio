@@ -11,12 +11,16 @@ export default {
   HEstudante: "Computer Science Student",
   H1: "Aspiring Front-End Developer, Computer Science student, passionate about creating modern and functional interfaces.",
   H2: "I am a Computer Science student with an interest in Information Security and Systems and Network Administration. I have hands-on experience in web development (Vue, Vuetify, AdonisJS, PostgreSQL) and in automation and systems integration projects. Additionally, I volunteer as a photographer in my community, combining technique and sensitivity to capture important moments. I am constantly seeking new challenges to apply my knowledge, learn, and contribute with creative and efficient solutions.",
-  EFotografo: " | Assembly of God Church, Belém, Campinas – SP | 2023 - Present",
-  HEFotografo: "Recording events and services, editing images, and creating visual content for the church's social media.",
+  EFotografo:
+    " | Assembly of God Church, Belém, Campinas – SP | 2023 - Present",
+  HEFotografo:
+    "Recording events and services, editing images, and creating visual content for the church's social media.",
   EProjetos: " | Freelancer | 2024 - Present",
-  HEProjetos: "Creating web applications using Vue.js, Vuetify, AdonisJS, and PostgreSQL. Experience in responsive design.",
-  EEstudante: " | FSFA - (EAD) | 2024 - Present", 
-  HEEstudante: "Focus on Information Securiy,t Network Administration, and Systems Development.",
+  HEProjetos:
+    "Creating web applications using Vue.js, Vuetify, AdonisJS, and PostgreSQL. Experience in responsive design.",
+  EEstudante: " | FSFA - (EAD) | 2024 - Present",
+  HEEstudante:
+    "Focus on Information Securiy,t Network Administration, and Systems Development.",
   ContactTitle: "Get in Touch",
   mensagemSucesso: "Message sent successfully!",
   mensagemErro: "Error sending the message. Please try again later.",
@@ -38,14 +42,15 @@ export default {
   title2: "Auto Repair Shop",
   dest2: "Website for a local auto repair shop, developed with Vue.js.",
   title3: "Price Monitoring Bot",
-  dest3: "A bot that monitors online prices and sends alerts on Discord or Telegram when the price drops. Ideal for deal hunters.",
+  dest3:
+    "A bot that monitors online prices and sends alerts on Discord or Telegram when the price drops. Ideal for deal hunters.",
+  title4: "CONSULTING SITE",
+  dest4: "DEVELOPED FOR PEOPLE TO MAKE A QUOTE FOR PERSONAL TRAINER CONSULTING",
   codigo: "Code",
   MProjetos: "My Projects",
-  DProjetos: "Below are some of the projects I have developed with a focus on performance and usability.",
+  DProjetos:
+    "Below are some of the projects I have developed with a focus on performance and usability.",
   claro: "Light",
   escuro: "Dark",
   sistema: "System",
-  
-
-
 };
