@@ -26,7 +26,7 @@
 
       <div class="socials">
         <a
-          href="https://github.com/NeegoVeio"
+          href="https://github.com/BillieJean06"
           target="_blank"
           aria-label="GitHub"
           rel="noopener noreferrer"

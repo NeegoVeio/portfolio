@@ -1,5 +1,5 @@
 export default {
-  Projetos: "Porjetos",
+  Projetos: "Projetos",
   Contato: "Contato",
   Sobre: "Sobre Mim",
   Footer:

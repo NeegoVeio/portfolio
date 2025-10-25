@@ -52,7 +52,7 @@ const projects = [
     title: t("$vuetify.title1"),
     description: t("$vuetify.dest1"),
     image: require("@/assets/projeto1.jpg"),
-    github: "https://github.com/NeegoVeio/portfolio",
+    github: "https://github.com/BillieJean06/portfolio",
     demo: "https://portfolio-isaque.vercel.app/",
   },
   {
@@ -60,7 +60,7 @@ const projects = [
     title: t("$vuetify.title2"),
     description: t("$vuetify.dest2"),
     image: require("@/assets/projeto2.jpg"),
-    github: "https://github.com/NeegoVeio/Mecanica",
+    github: "https://github.com/BillieJean06/Mecanica",
     demo: "https://mecanica-liart.vercel.app/",
   },
   {
@@ -68,7 +68,7 @@ const projects = [
     title: t("$vuetify.title3"),
     description: t("$vuetify.dest3"),
     image: require("@/assets/projeto3.jpg"),
-    github: "https://github.com/NeegoVeio/price-monitor-bot",
+    github: "https://github.com/BillieJean06/price-monitor-bot",
     demo: null,
   },
   {
@@ -84,7 +84,7 @@ const projects = [
     title: t("$vuetify.title5"),
     description: t("$vuetify.dest5"),
     image: require("@/assets/projeto5.jpg"),
-    github: "https://github.com/NeegoVeio/curriculo-inteligente",
+    github: "https://github.com/BillieJean06/curriculo-inteligente",
     demo: "https://curriculo-isaque.vercel.app/",
   },
 ];

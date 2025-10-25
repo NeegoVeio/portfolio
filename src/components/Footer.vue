@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer-content">
       <a
-        href="https://github.com/NeegoVeio"
+        href="https://github.com/BillieJean06"
         target="_blank"
         class="github-logo"
       >
@@ -13,13 +13,13 @@
       </a>
       <span>{{ Footer }}</span>
       <nav class="footer-links">
-        <a href="https://github.com/NeegoVeio" target="_blank">GitHub</a>
+        <a href="https://github.com/BillieJean06" target="_blank">GitHub</a>
         <a
           href="https://www.linkedin.com/in/isaque-teodoro-793a39282/"
           target="_blank"
           >LinkedIn</a
         >
-        <a href="https://instagram.com/seuusuario" target="_blank">Instagram</a>
+        <a href="https://instagram.com/isaqueteo_" target="_blank">Instagram</a>
       </nav>
     </div>
   </footer>
