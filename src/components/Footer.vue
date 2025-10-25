@@ -14,11 +14,7 @@
       <span>{{ Footer }}</span>
       <nav class="footer-links">
         <a href="https://github.com/BillieJean06" target="_blank">GitHub</a>
-        <a
-          href="https://www.linkedin.com/in/isaque-teodoro-793a39282/"
-          target="_blank"
-          >LinkedIn</a
-        >
+        <a href="https://www.linkedin.com/in/isaque-teodoro-793a39282/" target="_blank">LinkedIn</a>
         <a href="https://instagram.com/isaqueteo_" target="_blank">Instagram</a>
       </nav>
     </div>
@@ -46,7 +42,7 @@ export default {
   font-size: 14px;
   color: #888;
   background: transparent;
-  border-top: 1px solid #2c2c2c; /* linha sutil no topo */
+  border-top: 1px solid #202020; /* linha sutil no topo */
 }
 
 .footer-content {
@@ -79,21 +75,21 @@ export default {
 
 .footer-links a {
   text-decoration: none;
-  color: #888;
+  color: #000000;
   transition: 0.3s;
 }
 
 .footer-links a:hover {
-  color: #42b883; /* cor destaque Vue */
+  color: #ffffff; /* cor destaque Vue */
 }
 
 /* DARK MODE */
 body.dark-mode .footer {
-  color: #aaa;
-  border-top: 1px solid #444;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
 }
 
 body.dark-mode .footer-links a {
-  color: #aaa;
+  color: #ffffff;
 }
 </style>

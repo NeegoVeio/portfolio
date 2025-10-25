@@ -19,11 +19,6 @@
         <li>
           <router-link to="/about">{{ Sobre }}</router-link>
         </li>
-        <li>
-          <button @click="toggleTheme" class="theme-toggle">
-            {{ isDark ? "🌞 Claro" : "🌙 Escuro" }}
-          </button>
-        </li>
       </ul>
     </div>
   </nav>
@@ -31,69 +26,59 @@
 
 <script>
 import { useLocale } from "vuetify";
+import { computed, ref, onMounted, onBeforeUnmount } from "vue";
 
 export default {
   name: "AppNavbar",
   setup() {
     const { t } = useLocale();
 
-    const Contato = t("$vuetify.Contato");
-    const Projetos = t("$vuetify.Projetos");
-    const Sobre = t("$vuetify.Sobre");
+    // Traduções reativas
+    const Contato = computed(() => t("$vuetify.Contato"));
+    const Projetos = computed(() => t("$vuetify.Projetos"));
+    const Sobre = computed(() => t("$vuetify.Sobre"));
 
-    return { Projetos, Contato, Sobre };
-  },
-  data() {
-    return {
-      isDark: false,
-      menuOpen: false,
-      isScrolled: false,
+    const menuOpen = ref(false);
+    const isScrolled = ref(false);
+
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 20;
     };
-  },
-  created() {
-    const stored = localStorage.getItem("theme");
-    if (stored === "dark") {
-      this.isDark = true;
-      document.body.classList.add("dark-mode");
-    }
 
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    toggleTheme() {
-      this.isDark = !this.isDark;
-      if (this.isDark) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
-      }
-    },
-    handleScroll() {
-      this.isScrolled = window.scrollY > 20;
-    },
+    onMounted(() => {
+      window.addEventListener("scroll", handleScroll);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener("scroll", handleScroll);
+    });
+
+    return {
+      Projetos,
+      Contato,
+      Sobre,
+      menuOpen,
+      isScrolled,
+    };
   },
 };
 </script>
 
 <style scoped>
+/* Navbar padrão */
 .navbar {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.3); /* cinza fosco translúcido */
   color: white;
   padding: 14px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .navbar.scrolled {
-  background: rgba(30, 30, 30, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(100, 100, 100, 0.6); /* um pouco mais escuro ao rolar */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -106,7 +91,7 @@ export default {
 }
 
 .logo a {
-  color: #42b883;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -140,41 +125,6 @@ export default {
   color: #42b883;
 }
 
-.theme-toggle {
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: white;
-  color: #333;
-}
-
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-
-body.dark-mode .navbar.scrolled {
-  background: rgba(18, 18, 18, 0.7);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .theme-toggle {
-  border-color: #ccc;
-  color: #eee;
-}
-
-body.dark-mode .theme-toggle:hover {
-  background-color: #eee;
-  color: #333;
-}
-
 /* Responsivo */
 @media (max-width: 768px) {
   .hamburger {
@@ -186,12 +136,13 @@ body.dark-mode .theme-toggle:hover {
     top: 60px;
     left: 0;
     right: 0;
-    background: #333;
+    background: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
     gap: 16px;
     display: none;
+    backdrop-filter: blur(6px);
   }
 
   .nav-links.open {
